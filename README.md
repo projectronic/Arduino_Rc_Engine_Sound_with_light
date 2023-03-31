@@ -1,15 +1,15 @@
 # This is an Arduino RC engine sound generator with light simulation
 
-I am new at learning arduino and currently only have arduino nano spare around so i try to continue TheDIYGuy999 deprecated works.
-My main aim is to have sound and light controller for my rc
-Any help to fine tune the code really apreciated.
+I am new at learning arduino and currently only have arduino nano spare around so i try to continue TheDIYGuy999 deprecated works.<br>
+My main aim is to have sound and light controller for my rc<br>
+Any help to fine tune the code really apreciated.<br>
 
 ## Source
-Deprecated project v1.33 of TheDIYGuy999
-GitHub repo: https://github.com/TheDIYGuy999/Rc_Engine_Sound
-It's based on the mojoEngineSim: https://github.com/BeigeMatchbox/mojoEngineSim
-
-his new ESP32 version: https://github.com/TheDIYGuy999/Rc_Engine_Sound_ESP32
+Deprecated project v1.33 of TheDIYGuy999<br>
+GitHub repo: https://github.com/TheDIYGuy999/Rc_Engine_Sound <br>
+It's based on the mojoEngineSim: https://github.com/BeigeMatchbox/mojoEngineSim <br>
+<br>
+his new ESP32 version: https://github.com/TheDIYGuy999/Rc_Engine_Sound_ESP32 <br>
 
 ## Features:
 - Many selectable engine sounds and startup sounds for cars and trucks
