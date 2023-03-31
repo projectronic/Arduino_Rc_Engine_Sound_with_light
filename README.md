@@ -1,14 +1,15 @@
-# This is an Arduino RC engine sound generator
+# This is an Arduino RC engine sound generator with light simulation
 
-THIS PROJECT IS DEPRECATED! See new ESP32 version: https://github.com/TheDIYGuy999/Rc_Engine_Sound_ESP32
+I am new at learning arduino and currently only have arduino nano spare around so i try to continue TheDIYGuy999 deprecated works.
+My main aim is to have sound and light controller for my rc
+Any help to fine tune the code really apreciated.
 
+## Source
+Deprecated project v1.33 of TheDIYGuy999
+GitHub repo: https://github.com/TheDIYGuy999/Rc_Engine_Sound
 It's based on the mojoEngineSim: https://github.com/BeigeMatchbox/mojoEngineSim
 
-GitHub repo: https://github.com/TheDIYGuy999/Rc_Engine_Sound
-
-Video: https://www.youtube.com/watch?v=EaOJE_GU5pk&t=58s (showing version 1.2)
-
-STL data for 3D printed housing: https://www.thingiverse.com/thing:2814025
+his new ESP32 version: https://github.com/TheDIYGuy999/Rc_Engine_Sound_ESP32
 
 ## Features:
 - Many selectable engine sounds and startup sounds for cars and trucks
@@ -16,38 +17,47 @@ STL data for 3D printed housing: https://www.thingiverse.com/thing:2814025
 - Works best with a PAM8403 amplifier module, connected to pin 3, via a 10kOhm potentiometer
 - The engine RPM is calculated according to RC signal input on pin 2
 - Gear shifting is simulated in "curves.h"
-- Use an Arduino Pro Mini 5V, 16MHz
+- Use an Arduino Pro Pro 5V, 16MHz
+- Light simulation
 
-## New in V 1.0:
-- Runs on an ATMega328 with 8 or 16MHz clock (RC PWM throttle mode only on 16MHz)
-- More engine sounds added
+## Part List
+- Arduino nano / mini / uno
+- PAM8403 mini amplifier
+- potentiometer 10k
+- resistor
+- speaker (max 3 watt)
+- 2 x 5 mm led white (head lamp)
+- 2 x 3 mm led white (reverse lamp)
+- 2 x 3 mm led red (stop/brake lamp)
+- 4 x 3 mm led yellow (sign/blink lamp)
 
-## New in V 1.1:
-- Engine sound is switched off, if there is no PWM signal detected on Pin 2. Works together with my "Micro RC" receiver.
+## how to use
+- Open the "Rc_Engine_Sound.ino" and choose the "settings.h" tab
+- select the sound that you want by commenting/uncomment the sound file
+- additionaly you can change the Gear shifting in the "curves.h"
+- connect the speaker and hardware to:
+  -  Speaker to 3
+  -  receiver/remote Ch1 to 4
+  -  receiver/remote Ch2 to 2
+  -  receiver/remote Ch3 to 6
+  -  brake lamp to A1
+  -  reverse lamp to A2
+  -  head lamp to A3
+  -  Signal left A4
+  -  Signal right A5
+- upload the file to your board
+- if the light is jittery then change the pulse value in the "Rc_Engine_Sound.ino" 
 
-## New in V 1.2:
-- PWM throttle range now adjustable in settings.h
+### search for pulse value
+- open the "Rc_Engine_Sound.ino"
+- go to "void loop()" choose the ch you want to find the value and uncomment the "Serial.print" and "Serial.println"
+- upload and open the serial monitor
+- best if you uncomment 1 channel at a time and play with automtic scrolling
+- changes the value at //Head Lamp and //signal lamp     
 
-## New in V 1.3:
-- code cleaned up, removed unused SPI and digipot support, removed 8MHz support (was for SPI mode only)
-- Scania V8 and URAL-4320 V8 Diesel sounds added, including start sounds
-- fader for engine switch off phase added
-- throttle auto zero calibration added
-- simulated gearbox shifting points in "curves.h"
-- boolean variable "engineManualOnOff" ensures compatibility with older projects (Mustang 68)
-- engine is switching on or off depending on the throttle input or the presence of the RC signal (see above)
-
-## New in V 1.31:
-- mapThrottle() cleaned up, scaling bug fixed, throttle auto zero calibration now working correctly
-- adjust "pulseSpan" in "settings.h" according to your ESC / receiver settings
-- schematic and pictures added
-
-## New in V 1.32:
-- added the requested V8 trophy truck sound
-- optimized the generic "V8" sound to fit the memory in combination with the Ural start sound
-
-## New in V 1.33:
-- added the Defender V8 sounds (I forgot to upload them)
+## Schematic:
+![](https://github.com/projectronic/Arduino_Rc_Engine_Sound_with_light/blob/340e19521d18912ecbac316308c7cd428bb7f2a1/doc/Schematic_bb.png)
+![](https://github.com/projectronic/Arduino_Rc_Engine_Sound_with_light/blob/340e19521d18912ecbac316308c7cd428bb7f2a1/doc/led%20wiring_bb.png)
 
 ## Ho to create new sound arrays:
 
@@ -81,14 +91,3 @@ STL data for 3D printed housing: https://www.thingiverse.com/thing:2814025
 ### Compiling the new sketch:
 - compile and upload the sketch in Arduino IDE
 - the new engine should now run...
-
-## Schematic:
-![](https://github.com/TheDIYGuy999/Rc_Engine_Sound/blob/master/wiring.jpg)
-
-## Pictures (including optional additional filtering):
-![](https://github.com/TheDIYGuy999/Rc_Engine_Sound/blob/master/top.jpg)
-
-![](https://github.com/TheDIYGuy999/Rc_Engine_Sound/blob/master/bottom.jpg)
-
-
-2017 - 2019, TheDIYGuy999
