@@ -56,8 +56,8 @@ his new ESP32 version: https://github.com/TheDIYGuy999/Rc_Engine_Sound_ESP32 <br
 - changes the value at //Head Lamp and //signal lamp     
 
 ## Schematic:
-![](https://github.com/projectronic/Arduino_Rc_Engine_Sound_with_light/blob/fcf39246208f104a278c0c786b85faf9ceb4ac1d/doc/Schematic_bb.png)
-![](https://github.com/projectronic/Arduino_Rc_Engine_Sound_with_light/blob/340e19521d18912ecbac316308c7cd428bb7f2a1/doc/led%20wiring_bb.png)
+![](https://github.com/projectronic/Arduino_Rc_Engine_Sound_with_light/blob/52771ad485f95c72b8efa5ffc7c4e6dda670866b/doc/Schematic_bb.png)
+![](https://github.com/projectronic/Arduino_Rc_Engine_Sound_with_light/blob/52771ad485f95c72b8efa5ffc7c4e6dda670866b/doc/led%20wiring_bb.png)
 
 ## Ho to create new sound arrays:
 
